@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Helloducky — a tiny duck that guards your to-do list</title>
+  <meta name="description" content="Helloducky: a desktop pet duck for macOS. Five tasks a day, a deep-work timer with a personal trainer, and check-ins you can't ignore." />
+  <link rel="icon" href="assets/icon.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="hero">
+    <img class="app-icon" src="assets/icon.png" alt="" width="72" height="72" />
+    <h1>Ducky</h1>
+    <p class="tagline">A tiny duck that guards your to-do list.</p>
+    <p class="sub">Five tasks a day. Deep work with a personal trainer.<br />Check-ins you can't ignore.</p>
+    <img id="hero-duck" src="assets/idle_nest_duck_1.png" alt="Ducky sitting in its nest" width="180" height="160" />
+    <div class="buttons">
+      <a class="btn primary" href="https://github.com/celladevv/helloducky/releases/latest/download/Ducky-mac.zip">Download for Mac</a>
+      <span class="btn soon">Windows — coming soon</span>
+    </div>
+    <p id="download-count" class="fineprint" hidden></p>
+    <p class="fineprint">unsigned build: right-click → Open the first time</p>
+  </header>
+
+  <section class="features" aria-label="Features">
+    <div class="cards">
+      <div class="card">
+        <img src="assets/idle_nest_duck_1.png" alt="" width="90" height="80" />
+        <h2>Five tasks. That's it.</h2>
+        <p>A to-do list with a hard cap. Finish yesterday's leftovers or start
+        fresh — Ducky asks every morning, and never lets the pile grow.</p>
+      </div>
+      <div class="card">
+        <img src="assets/training_duck_1.png" alt="" width="90" height="80" />
+        <h2>Deep work, supervised.</h2>
+        <p>A pomodoro timer that lives on your desk. While you focus, the duck
+        lifts weights beside your cursor. Finish a session, it flexes.
+        Breaks are walks and swims.</p>
+      </div>
+      <div class="card">
+        <img src="assets/angry_knife_duck_1.png" alt="" width="90" height="80" />
+        <h2>Check-ins with consequences.</h2>
+        <p>Pick a daily check-in time. Skip it, and the duck comes to find
+        your cursor. You get three snoozes. After that&hellip; the knife
+        comes out.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>Ducky</strong> — made with 🦆 by
+      <a href="https://www.linkedin.com/in/marcella-devvy">marcelladevvy</a></p>
+    <p class="copyright">© 2026 Marcella Devvy. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // The hero duck is the real desktop sprite, animated exactly like the app.
+    const frames = ['assets/idle_nest_duck_1.png', 'assets/idle_nest_duck_2.png'];
+    frames.forEach((src) => { new Image().src = src; });
+    const duck = document.getElementById('hero-duck');
+    let i = 0;
+    setInterval(() => { i = (i + 1) % frames.length; duck.src = frames[i]; }, 600);
+
+    // Show the download count once it clears 100 (GitHub Releases API).
+    fetch('https://api.github.com/repos/celladevv/helloducky/releases')
+      .then((r) => r.json())
+      .then((releases) => {
+        const total = releases.reduce(
+          (sum, rel) => sum + rel.assets.reduce((a, x) => a + x.download_count, 0), 0);
+        if (total >= 100) {
+          const el = document.getElementById('download-count');
+          el.textContent = `${total.toLocaleString()} downloads and counting 🦆`;
+          el.hidden = false;
+        }
+      })
+      .catch(() => {});
+  </script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box;
+}
+
+/* One continuous scene from sky to path; the dark base color takes over
+   if the page runs longer than the artwork. */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #f4f5fb;
+  background: #14122b url('assets/bg_full.jpg') top center / 100% auto no-repeat;
+}
+
+a {
+  color: inherit;
+}
+
+/* ---- hero: night sky with the pond below ---- */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 48px 24px 96px;
+}
+
+.app-icon {
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+.hero h1 {
+  margin: 18px 0 0;
+  font-size: 64px;
+  letter-spacing: 0.02em;
+  color: #f7f3e8;
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.6);
+}
+
+.tagline {
+  margin: 10px 0 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #e6e2f5;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.sub {
+  margin: 8px 0 0;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: #b9b4d8;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+#hero-duck {
+  margin-top: 26px;
+  image-rendering: auto;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.5));
+}
+
+.buttons {
+  display: flex;
+  gap: 14px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  border-radius: 14px;
+  padding: 14px 26px;
+  font-size: 16px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.btn.primary {
+  background: #f7f3e8;
+  color: #23277c;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+}
+
+.btn.primary:hover {
+  transform: translateY(-1px);
+}
+
+.btn.soon {
+  border: 2px solid rgba(247, 243, 232, 0.35);
+  color: rgba(247, 243, 232, 0.55);
+  cursor: default;
+}
+
+.fineprint {
+  margin-top: 18px;
+  font-size: 12.5px;
+  color: rgba(244, 245, 251, 0.55);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* ---- features over the pond ---- */
+
+.features {
+  padding: 96px 24px;
+}
+
+.cards {
+  max-width: 1020px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+}
+
+/* The cards reuse the app's own panel styling — the page previews the UI. */
+.card {
+  background: #fafbff;
+  color: #3237a4;
+  border-radius: 18px;
+  padding: 26px 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.card img {
+  object-fit: contain;
+}
+
+.card h2 {
+  margin: 10px 0 8px;
+  font-size: 19px;
+  color: #23277c;
+}
+
+.card p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* ---- footer on the dark path ---- */
+
+footer {
+  padding: 110px 24px 60px;
+  text-align: center;
+  font-size: 14.5px;
+  color: #d8d4ec;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+footer p {
+  margin: 6px 0;
+}
+
+.copyright {
+  font-size: 12.5px;
+  color: rgba(216, 212, 236, 0.65);
+}
+
+@media (max-width: 560px) {
+  .hero h1 {
+    font-size: 44px;
+  }
+  .arrow {
+    display: none;
+  }
+}
