@@ -151,6 +151,59 @@ a {
   font-weight: 500;
 }
 
+/* ---- consequences strip ---- */
+
+.consequences {
+  padding: 40px 24px 10px;
+  text-align: center;
+}
+
+.consequences-lead {
+  margin: 0 0 22px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #f7f3e8;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+}
+
+.strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.strip figure {
+  margin: 0;
+  background: rgba(20, 18, 43, 0.72);
+  border-radius: 16px;
+  padding: 14px 18px 10px;
+}
+
+.strip img {
+  object-fit: contain;
+}
+
+.strip figcaption {
+  margin-top: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #d8d4ec;
+}
+
+.arrow {
+  font-size: 24px;
+  color: rgba(247, 243, 232, 0.7);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.consequences-note {
+  margin: 20px 0 0;
+  font-size: 14px;
+  color: #cfcae6;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
 /* ---- footer on the dark path ---- */
 
 footer {
