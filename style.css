@@ -71,11 +71,20 @@ a {
 }
 
 .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
   border-radius: 14px;
   padding: 14px 26px;
   font-size: 16px;
   font-weight: 800;
   text-decoration: none;
+}
+
+.btn-icon {
+  flex: none;
+  /* optical alignment: logos sit a hair high next to text baselines */
+  margin-top: -1px;
 }
 
 .btn.primary {
