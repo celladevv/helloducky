@@ -110,6 +110,19 @@ a {
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
 }
 
+.coming-soon-badge {
+  margin-top: 28px;
+  display: inline-block;
+  background: rgba(247, 243, 232, 0.14);
+  border: 1.5px solid rgba(247, 243, 232, 0.4);
+  color: #f7f3e8;
+  border-radius: 14px;
+  padding: 13px 26px;
+  font-size: 16px;
+  font-weight: 800;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
 /* ---- features over the pond ---- */
 
 .features {
